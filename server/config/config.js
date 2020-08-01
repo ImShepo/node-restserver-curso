@@ -11,10 +11,6 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 // ====================================
 // Vencimiento del Token
 // ====================================
-
-// ====================================
-// SEED de autenticación
-// ====================================
 // 60 segundos
 // 60 minutos
 // 24 horas
@@ -37,3 +33,8 @@ if (process.env.NODE_ENV === 'dev') {
     urlDB = process.env.MONGO_URI;
 }
 process.env.URLDB = urlDB;
+
+// ====================================
+// Google Client ID
+// ====================================
+process.env.CLIENT_ID = process.env.CLIENT_ID || '964336828295-03obm690a52l9h9v9gd8f5iqv4rovbhc.apps.googleusercontent.com'
