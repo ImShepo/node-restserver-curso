@@ -6,7 +6,6 @@ const { verificaToken, verificaAdminRole } = require('../middlewares/autenticaci
 const app = express();
 
 app.get('/usuario', verificaToken, (req, res) => {
-    // Solo trae registros cuyo estado está activo
 
     let desde = req.query.desde || 0;
     desde = Number(desde);
@@ -14,6 +13,7 @@ app.get('/usuario', verificaToken, (req, res) => {
     let limite = req.query.limite || 5;
     limite = Number(limite);
 
+    // Solo trae registros cuyo estado está activo
     Usuario.find({ estado: true }, 'nombre email role estado google img')
         .skip(desde)
         .limit(limite)
